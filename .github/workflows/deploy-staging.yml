@@ -21,4 +21,4 @@ jobs:
         with:
           args: deploy --only storage
         env:
-          GCP_SA_KEY: ${{ secrets.FIREBASE_DEPLOY_SA }}
+          GCP_SA_KEY: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_RULES }}
