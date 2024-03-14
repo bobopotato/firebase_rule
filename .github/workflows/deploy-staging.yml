@@ -1,0 +1,24 @@
+name: Firestore Storage Rules staging CI/CD
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - staging
+    paths:
+      - 'storage-qashiertest-appspot-com.rules'
+      - 'storage-qashiertest-update.rules'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: Staging
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy Firestore Storage Rules
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only storage
+        env:
+          GCP_SA_KEY: ${{ secrets.FIREBASE_DEPLOY_SA }}

@@ -1,0 +1,17 @@
+{
+    "firestore": {
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    },
+    "storage": [
+      {
+        "rules": "storage-test-rules.rules",
+        "bucket": "test-rules-90c6e.appspot.com"
+      },
+      {
+        "rules": "storage-rules.rules",
+        "bucket": "rules-402b3.appspot.com"
+      }
+    ]
+  }
+  
